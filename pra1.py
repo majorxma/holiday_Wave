@@ -24,16 +24,16 @@ yreal = yy.real               # 获取实数部分
 yimag = yy.imag               # 获取虚数部分
 
 yf=abs(fft(y))                # 取模
-yf1=abs(fft(y))/((len(x)/2))           #归一化处理
-yf2 = yf1[range(int(len(x)/2))]  #由于对称性，只取一半区间
+yf1=abs(fft(y))/((len(x)))           #归一化处理
+yf2 = yf1[range(int(len(x)))]  #由于对称性，只取一半区间
 
 xf = np.arange(len(y))        # 频率
 xf1 = xf
-xf2 = xf[range(int(len(x)/2))]  #取一半区间
+xf2 = xf[range(int(len(x)))]  #取一半区间
 
 #原始波形
 plt.subplot(221)
-plt.plot(x[0:50],y[0:50])
+plt.plot(x[0:200],y[0:200])
 plt.title('Original wave')
 #混合波的FFT（双边频率范围）
 plt.subplot(222)
